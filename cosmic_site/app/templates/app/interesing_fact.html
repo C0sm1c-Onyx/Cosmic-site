@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% for elem in page_obj %}
+<div id="fact">
+    <h3 id="title_h3">{{ elem.title }}</h3>
+    <p id="text_p">{{ elem.text }}</p>
+</div>
+{% endfor %}
+
+<nav>
+    <ul>
+        {% for p in page_obj.paginator.page_range %}
+        <li><a id="navigate" href="?page={{ p }}">{{ p }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}

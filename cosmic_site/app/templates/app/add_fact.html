@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div id="text1">
+    <h1>Добавление интересного факта</h1><br><br>
+    <form action="{% url 'add_fact' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+{% endblock %}

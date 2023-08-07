@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CosmicSite</title>
+    <link rel="icon" type="image/png" href="{% static 'app/image/logo.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div id="rect1">
+        <ul id="header_list">
+          <li><a href="{% url 'facts' %}">Интересные факты</a></li>
+          <li><a href="{% url 'info' %}">Дополнительная информация</a></li>
+          <li><a href="{% url 'contacts' %}">Контакты</a></li>
+        {% if is_auth %}
+          <li><a href="{% url 'add_fact' %}">Добавить факт</a></li>
+        {% else %}
+          <li><a href="{% url 'sign_in' %}">Войти</a></li>
+        {% endif %}
+        </ul>
+      </div>
+      <div id="home">
+        <a href="{% url 'home' %}">COSMIC</a>
+      </div>
+      <div>
+        <a href="{% url 'home' %}"><img id='logo' src="{% static 'app/image/logo.png' %}" /></a>
+      </div>
+    </header>
+{% block content %}
+    <main>
+      <div>
+        <img id="background" src="static/app/image/background.jpg" />
+      </div>
+      <div>
+        <a href="asteroids/"><img id="img1" src="static/app/image/asteroid.jpg" /></a>
+      </div>
+      <div>
+        <a href="planets/"><img id="img2" src="static/app/image/planets.jpg" /></a>
+      </div>
+      <div>
+        <a href="stars/"><img id="img3" src="static/app/image/star.jpg" /></a>
+      </div>
+      <div>
+        <a href="nebulae/"><img id="img4" src="static/app/image/nebula1.jpg" /></a>
+      </div>
+      <div>
+        <a href="galaxies/"><img id="img5" src="static/app/image/galaxy1.jpg" /></a>
+      </div>
+      <div>
+        <a href="black_holes/"><img id="img6" src="static/app/image/black_hole.jpg" /></a>
+      </div>
+      <div>
+        <a href="space_time/"><img id="img7" src="static/app/image/space_time1.jpg" /></a>
+      </div>
+      <div>
+        <a href="dark_energy/"><img id="img8" src="static/app/image/dark_energy.jpg" /></a>
+      </div>
+      <div>
+        <a href="universe/"><img id="img9" src="static/app/image/universe.jpg" /></a>
+      </div>
+      <div id="txt1">
+        <h1>Астероиды</h1>
+      </div>
+      <div id="txt2">
+        <h1>Планеты</h1>
+      </div>
+      <div id="txt3">
+        <h1>Звёзды</h1>
+      </div>
+      <div id="txt4">
+        <h1>Туманности</h1>
+      </div>
+      <div id="txt5">
+        <h1>Галактики</h1>
+      </div>
+      <div id="txt6">
+        <h1>Чёрные дыры</h1>
+      </div>
+      <div id="txt7">
+        <h1>Пространство, время</h1>
+      </div>
+      <div id="txt8">
+        <h1>Темная энергия<br>и материя</h1>
+      </div>
+      <div id="txt9">
+        <h1>Вселенная</h1>
+      </div>
+    </main>
+{% endblock %}
+    <footer>
+
+    </footer>
+  </body>
+</html>
